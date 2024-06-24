@@ -1,0 +1,23 @@
+const palette = {
+  primary: {
+    main: "#3C0061",
+    rgb: "60, 0, 97",
+  },
+  secondary: {
+    main: "#662AB2",
+    rgb: "102, 42, 178",
+  },
+  purple_heart: { main: "#5F1EB0", rgb: "95, 30, 176" },
+  mauve: "#DABDFF",
+  white: "#FFFFFF",
+  red: "#FF0000",
+  gainsboro: "#D9D9D9",
+  islamic_green: "#009020",
+  mango_tango: "#CF8902",
+  sapphire: "#06092E",
+  navy: "#1C002D",
+  medium_slate_blue: "#AE7EEC",
+  dark_violet: "#9104C2",
+};
+
+export default palette;
