@@ -2,27 +2,12 @@ import React from "react";
 import CashShowerBgV1 from "../../../assets/img/cash_shower_bg_v1.png";
 import HelpChatIcon from "../../../assets/img/help_chat_icon.png";
 import { ReactComponent as BackArrowIcon } from "../../../assets/vec/back_arrow_icon.svg";
-import { ReactComponent as ListDiscIcon } from "../../../assets/vec/list_disc_icon.svg";
 import { ReactComponent as PlayBtnIcon } from "../../../assets/vec/play_btn_icon.svg";
 import { ReactComponent as RArrowIcon } from "../../../assets/vec/r_arrow_icon.svg";
 import Layout from "../layout";
 
-import {
-  Box,
-  Divider,
-  FormControlLabel,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  List as MuiList,
-  Radio,
-  RadioGroup,
-  Stack,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, List as MuiList, Stack, Typography, styled } from "@mui/material";
 
-import palette from "../../../theme/palette";
 import GradientButton from "../components/gradientButton";
 
 const List = styled(MuiList)(({ theme }) => ({

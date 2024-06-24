@@ -6,6 +6,13 @@ import Account from "./pages/main/account";
 import Home from "./pages/main/home";
 import AccountWithdrawal from "./pages/main/accountWithdrawal";
 import CustomerService from "./pages/main/customerService";
+import BankInfo from "./pages/sub/bankInfo";
+import EaringsDetails from "./pages/sub/earingsDetails";
+import WithdrawalOrders from "./pages/sub/withdrawalOrders";
+import MessageCenter from "./pages/sub/messageCenter";
+import ChangePassword from "./pages/sub/changePassword";
+import TRCInfo from "./pages/sub/trcInfo";
+import Promotion from "./pages/main/promotion";
 
 const GradientBox = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -24,6 +31,13 @@ function App() {
             <Route path="/account" element={<Account />} />
             <Route path="/account-withdrawal" element={<AccountWithdrawal />} />
             <Route path="/customer-service" element={<CustomerService />} />
+            <Route path="/bank-info" element={<BankInfo />} />
+            <Route path="/earnings-details" element={<EaringsDetails />} />
+            <Route path="/withdrawal-orders" element={<WithdrawalOrders />} />
+            <Route path="/message-center" element={<MessageCenter />} />
+            <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/trc-info" element={<TRCInfo />} />
+            <Route path="/promotion" element={<Promotion />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>

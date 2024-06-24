@@ -18,6 +18,9 @@ const palette = {
   navy: "#1C002D",
   medium_slate_blue: "#AE7EEC",
   dark_violet: "#9104C2",
+  nobel: "#999999",
+  silver: { main: "#BCBCBC", rgb: "188, 188, 188" },
+  magnolia: "#F0E4FF",
 };
 
 export default palette;

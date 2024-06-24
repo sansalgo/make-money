@@ -17,11 +17,12 @@ function Layout({ children }) {
     <Box
       fontFamily={"Poppins"}
       sx={{ overflowY: "scroll", scrollbarWidth: "none", overflowX: "hidden" }}
+      width={"100%"}
     >
       {children}
       <Box mt={"56px"} />
       <Paper
-        sx={{ position: "absolute", bottom: 0, left: 0, right: 0 }}
+        sx={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 10 }}
         elevation={0}
       >
         <BottomNavigation
