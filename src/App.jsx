@@ -18,6 +18,8 @@ const GradientBox = styled(Box)(({ theme }) => ({
   position: "relative",
   height: "100vh",
   display: "flex",
+  justifyContent: "center",
+  width: "100%",
   background: `linear-gradient(180deg, ${theme.palette.white} 41.6%, ${theme.palette.secondary.main} 118.86%)`,
 }));
 

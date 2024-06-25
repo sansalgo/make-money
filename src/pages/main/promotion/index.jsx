@@ -8,6 +8,7 @@ import WithdrawalOrdersIcon from "../../../assets/img/withdrawal_orders_icon.png
 import AccountWithdrawalIcon from "../../../assets/img/account_withdrawal_icon.png";
 import EarningsDetailsIcon from "../../../assets/img/earnings_details_icon.png";
 import MessageCenterIcon from "../../../assets/img/message_center_icon.png";
+import QrCode from "../../../assets/img/qr_code.png";
 import ChangePasswordIcon from "../../../assets/img/change_password_icon.png";
 import { ReactComponent as CopyIcon } from "../../../assets/vec/copy_icon.svg";
 import { ReactComponent as TranslateIcon } from "../../../assets/vec/translate_icon.svg";
@@ -29,6 +30,7 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
+  Grid,
 } from "@mui/material";
 
 import GradientButton from "../components/gradientButton";
@@ -61,14 +63,22 @@ function Promotion() {
             position={"absolute"}
             height={"100vh"}
             borderRadius={"26px"}
-            bgcolor={"white"}
             width={"100%"}
             mt={"40px"}
             zIndex={1}
+            sx={{
+              background:
+                "linear-gradient(180deg, rgba(255,255,255,1) 30%, rgba(0,0,0,0) 30%)",
+            }}
           >
-            <Stack p={2}>
-              <Box pt={2} />
-              <Box></Box>
+            <Stack p={2} pt={4} spacing={2}>
+              <Typography variant="subtitle1">
+                Withdrawable Amount 100.00
+              </Typography>
+
+              <Typography variant="h4" fontSize={"30px"}>
+                0
+              </Typography>
             </Stack>
           </Box>
           <Box
@@ -83,10 +93,107 @@ function Promotion() {
               background: `linear-gradient(171.95deg, ${palette.navy} 3.67%, rgba(${palette.secondary.rgb}, 0) 74.68%)`,
             }}
           >
-            <Stack p={2}>
-              <Box pt={2} />
-              <Box></Box>
-            </Stack>
+            <Box p={2} pt={4}>
+              <Box color={"white"}>
+                <Stack
+                  direction="row"
+                  justifyContent={"center"}
+                  divider={
+                    <Divider
+                      sx={{ borderColor: "white", my: "12px !important" }}
+                      orientation="vertical"
+                      flexItem
+                    />
+                  }
+                  spacing={1.5}
+                >
+                  <Stack>
+                    <Typography variant="h6">0</Typography>
+                    <Typography variant="caption">To day Bonus</Typography>
+                  </Stack>
+                  <Stack>
+                    <Typography variant="h6">0</Typography>
+                    <Typography variant="caption">Yesterday’s Bonus</Typography>
+                  </Stack>
+                  <Stack>
+                    <Typography variant="h6">0.00</Typography>
+                    <Typography variant="caption">Team Bonus</Typography>
+                  </Stack>
+                </Stack>
+              </Box>
+              <Box pt={4} />
+              <Stack spacing={1}>
+                <Box
+                  bgcolor={"rgba(255, 255, 255, 0.5)"}
+                  py={1.3}
+                  px={2}
+                  borderRadius={"14px"}
+                >
+                  <Grid alignItems={"center"} container>
+                    <Grid display={"flex"} justifyContent={"start"} item xs={4}>
+                      <Typography variant="subtitle1" fontSize={"15px"}>
+                        Code
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={4}>
+                      <Typography noWrap variant="subtitle1" fontSize={"15px"}>
+                        pxzb84b
+                      </Typography>
+                    </Grid>
+                    <Grid display={"flex"} justifyContent={"end"} item xs={4}>
+                      <GradientButton
+                        sx={{ padding: "0.1rem 1rem" }}
+                        variant="contained"
+                        size="small"
+                      >
+                        Copy
+                      </GradientButton>
+                    </Grid>
+                  </Grid>
+                </Box>
+                <Box
+                  bgcolor={"rgba(255, 255, 255, 0.5)"}
+                  py={1.3}
+                  px={2}
+                  borderRadius={"14px"}
+                >
+                  <Grid alignItems={"center"} container>
+                    <Grid item xs={4}>
+                      <Typography
+                        display={"flex"}
+                        justifyContent={"start"}
+                        variant="subtitle1"
+                        fontSize={"15px"}
+                      >
+                        Link
+                      </Typography>
+                    </Grid>
+                    <Grid item xs={4}>
+                      <Typography noWrap variant="subtitle1" fontSize={"15px"}>
+                        http//makemoney
+                      </Typography>
+                    </Grid>
+                    <Grid display={"flex"} justifyContent={"end"} item xs={4}>
+                      <GradientButton
+                        sx={{ padding: "0.1rem 1rem" }}
+                        variant="contained"
+                        size="small"
+                      >
+                        Copy
+                      </GradientButton>
+                    </Grid>
+                  </Grid>
+                </Box>
+              </Stack>
+            </Box>
+            <Box pt={4} />
+            <Box>
+              <img
+                style={{ backgroundColor: "white", borderRadius: "12px" }}
+                src={QrCode}
+                alt="qr_code"
+              />
+            </Box>
           </Box>
           <Box position={"absolute"} top={0}>
             <img

@@ -6,7 +6,7 @@ import palette from "../../../theme/palette";
 
 function Layout({ children }) {
   return (
-    <Box padding="0px 28px" fontFamily={"Inter Variable"}>
+    <Box padding="0px 28px" fontFamily={"Inter Variable"} width={"100%"}>
       <Box paddingTop={8} />
       <Box component={"header"}>
         <img src={mm_icon} alt="mm_icon" />
