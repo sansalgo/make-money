@@ -8,10 +8,12 @@ import { ReactComponent as HomeNavIcon } from "../../../assets/vec/home_nav_icon
 import { ReactComponent as CustomerServiceNavIcon } from "../../../assets/vec/customer_service_nav_icon.svg";
 import { ReactComponent as PromotionNavIcon } from "../../../assets/vec/promotion_nav_icon.svg";
 import { ReactComponent as AccountNavIcon } from "../../../assets/vec/account_nav_icon.svg";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+
+const NAV = ["/", "/customer-service", "/promotion", "/account"]
 
 function Layout({ children }) {
-  const [value, setValue] = useState(0);
 
   return (
     <Box
@@ -26,15 +28,12 @@ function Layout({ children }) {
         elevation={0}
       >
         <BottomNavigation
-          value={value}
-          onChange={(event, newValue) => {
-            setValue(newValue);
-          }}
+          value={useLocation().pathname}
         >
-          <BottomNavigationAction icon={<HomeNavIcon />} />
-          <BottomNavigationAction icon={<CustomerServiceNavIcon />} />
-          <BottomNavigationAction icon={<PromotionNavIcon />} />
-          <BottomNavigationAction icon={<AccountNavIcon />} />
+          <BottomNavigationAction component={Link} value={NAV[0]} to={NAV[0]} icon={<HomeNavIcon />} />
+          <BottomNavigationAction component={Link} value={NAV[1]} to={NAV[1]} icon={<CustomerServiceNavIcon />} />
+          <BottomNavigationAction component={Link} value={NAV[1]} to={NAV[2]} icon={<PromotionNavIcon />} />
+          <BottomNavigationAction component={Link} value={NAV[1]} to={NAV[3]} icon={<AccountNavIcon />} />
         </BottomNavigation>
       </Paper>
     </Box>
