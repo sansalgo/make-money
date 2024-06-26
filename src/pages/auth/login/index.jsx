@@ -13,6 +13,7 @@ import React from "react";
 import { ReactComponent as PasswordIcon } from "../../../assets/vec/password_icon.svg";
 import { ReactComponent as UsernameIcon } from "../../../assets/vec/username_icon.svg";
 import Layout from "../layout";
+import { useNavigate } from "react-router-dom";
 
 const Button = styled(MuiButton)(({ theme }) => ({
   fontStyle: "normal",
@@ -24,6 +25,7 @@ const Button = styled(MuiButton)(({ theme }) => ({
 }));
 
 function Login() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Box component={"main"}>
@@ -85,7 +87,7 @@ function Login() {
           <Button variant="contained" size="large">
             LOGIN
           </Button>
-          <Button variant="outlined" color="secondary">
+          <Button variant="outlined" color="secondary" onClick={() => navigate('/register')}>
             REGISTER
           </Button>
         </Stack>
