@@ -20,6 +20,7 @@ import { ReactComponent as BackArrowIcon } from "../../../assets/vec/back_arrow_
 import palette from "../../../theme/palette";
 import GradientButton from "../../main/components/gradientButton";
 import Layout from "../layout";
+import { useNavigate } from "react-router-dom";
 
 const Tabs = styled(MuiTabs)(({ theme }) => ({
   minHeight: 0,
@@ -79,6 +80,7 @@ const Item = styled(Box)(({ theme }) => ({
 
 function EaringsDetails() {
   const [value, setValue] = useState(NaN);
+  const navigate = useNavigate();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -224,6 +226,8 @@ function EaringsDetails() {
             />
           </Box>
           <Stack
+            onClick={() => navigate("/account")}
+            style={{ cursor: "pointer" }}
             margin={1}
             direction={"row"}
             spacing={1}

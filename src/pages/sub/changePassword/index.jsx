@@ -15,6 +15,7 @@ import { ReactComponent as BackArrowIcon } from "../../../assets/vec/back_arrow_
 import palette from "../../../theme/palette";
 import GradientButton from "../../main/components/gradientButton";
 import Layout from "../layout";
+import { useNavigate } from "react-router-dom";
 
 const Tabs = styled(MuiTabs)(({ theme }) => ({
   minHeight: 0,
@@ -61,6 +62,7 @@ function TabPanel(props) {
 
 function ChangePassword() {
   const [value, setValue] = useState(0);
+  const navigate = useNavigate();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -87,6 +89,8 @@ function ChangePassword() {
               style={{ borderRadius: "10px" }}
             />
             <Stack
+              onClick={() => navigate("/account")}
+              style={{ cursor: "pointer" }}
               margin={1}
               direction={"row"}
               spacing={1}

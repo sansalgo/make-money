@@ -35,6 +35,7 @@ import {
 
 import GradientButton from "../components/gradientButton";
 import palette from "../../../theme/palette";
+import { useNavigate } from "react-router-dom";
 
 const ImgIconButton = styled(Button)(({ theme }) => ({
   backgroundColor: `white`,
@@ -53,6 +54,7 @@ const ImgIconButton = styled(Button)(({ theme }) => ({
 }));
 
 function Promotion() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Box padding={"0 20px"}>
@@ -203,6 +205,8 @@ function Promotion() {
             />
           </Box>
           <Stack
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }}
             margin={1}
             direction={"row"}
             spacing={1}

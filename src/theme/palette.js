@@ -2,6 +2,7 @@ const palette = {
   primary: {
     main: "#3C0061",
     rgb: "60, 0, 97",
+    gradient: "linear-gradient(202.17deg, #1C002D 8.58%, #662AB2 91.42%)",
   },
   secondary: {
     main: "#662AB2",

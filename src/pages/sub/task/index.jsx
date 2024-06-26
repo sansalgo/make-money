@@ -3,6 +3,7 @@ import Layout from "../layout";
 import ProfileIcon from "../../../assets/img/profile_icon.png";
 import CashShowerBgV1 from "../../../assets/img/cash_shower_bg_v1.png";
 import AdImg from "../../../assets/img/ad_img.png";
+import { ReactComponent as BackArrowIcon } from "../../../assets/vec/back_arrow_icon.svg";
 import { ReactComponent as CopyIcon } from "../../../assets/vec/copy_icon.svg";
 import { ReactComponent as TranslateIcon } from "../../../assets/vec/translate_icon.svg";
 import { ReactComponent as NoteIcon } from "../../../assets/vec/note_icon.svg";
@@ -22,9 +23,10 @@ import {
   ListItemAvatar,
   Avatar,
   ListItemText,
+  Grid,
 } from "@mui/material";
-
-import GradientButton from "../components/gradientButton";
+import GradientButton from "../../main/components/gradientButton";
+import { useNavigate } from "react-router-dom";
 
 const Alert = styled(MuiAlert)(({ theme }) => ({
   background: `rgba(${theme.palette.secondary.rgb}, 0.5)`,
@@ -39,7 +41,8 @@ const Alert = styled(MuiAlert)(({ theme }) => ({
   },
 }));
 
-function Home() {
+function Task() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Box padding={"0 20px"}>
@@ -52,78 +55,48 @@ function Home() {
         >
           <Box
             display={"flex"}
-            margin={"0 auto"}
-            width={"fit-content"}
+            height={"140px"}
+            width={"100%"}
+            borderRadius={"10px"}
             justifyContent={"center"}
             alignItems={"center"}
             position={"relative"}
-          >
-            <img
-              src={CashShowerBgV1}
-              alt="cash_shower_bg_v1"
-              style={{ borderRadius: "10px" }}
-            />
-            <Box margin={2} position={"absolute"} top={0} right={0}>
-              <TranslateIcon />
-            </Box>
-            <Box position={"absolute"}>
-              <Stack direction={"row"} spacing={2} alignItems={"center"}>
-                <img src={ProfileIcon} alt="profile_icon" />
-                <Box textAlign={"left"} color={"white"}>
-                  <Typography variant="h6" sx={{ fontSize: "19px" }}>
-                    Himu2024
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ fontSize: "15px" }}>
-                    Code : pxz84b &nbsp;
-                    <Chip
-                      label="Copy"
-                      size="small"
-                      sx={{ color: "white", backgroundColor: "navy" }}
-                      icon={<CopyIcon color="mauve" />}
-                    />
-                  </Typography>
-                </Box>
-              </Stack>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              position: "absolute",
-              backgroundColor: "white",
-              boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.15)",
-              borderRadius: "8px",
-              padding: "1rem",
-              bottom: "-64px",
-            }}
+            sx={{ background: `url(${CashShowerBgV1})` }}
           >
             <Stack
-              direction="row"
-              divider={<Divider orientation="vertical" flexItem />}
-              spacing={2}
+              onClick={() => navigate("/account")}
+              style={{ cursor: "pointer" }}
+              margin={1}
+              direction={"row"}
+              spacing={1}
+              top={0}
+              left={0}
+              position={"absolute"}
             >
-              <Box>
-                <Typography
-                  variant="h6"
-                  fontWeight={"600"}
-                  color="islamic_green"
-                >
-                  100.00
-                </Typography>
-                <Typography variant="caption">Balance</Typography>
-              </Box>
-              <Box>
-                <Typography variant="h6" fontWeight={"600"} color="mango_tango">
-                  0.00
-                </Typography>
-                <Typography variant="caption">Task Bonus</Typography>
-              </Box>
-              <Box>
-                <Typography variant="h6" fontWeight={"600"} color="secondary">
-                  0.00
-                </Typography>
-                <Typography variant="caption">Promo Bonus</Typography>
-              </Box>
+              <BackArrowIcon />
+              <Typography color={"white"} variant="subtitle1">
+                WhatsApp Message Task
+              </Typography>
             </Stack>
+
+            <Box>
+              <Grid container>
+                <Grid item>
+                  <Box bgcolor={"white"}>
+                    <Typography variant="h6">0</Typography>
+                    <Typography variant="caption">Today’s points</Typography>
+                  </Box>
+                </Grid>
+                <Grid item>
+                  <Box bgcolor={"white"}>
+                    <Typography variant="h6">0</Typography>
+                    <Typography variant="caption">
+                      Yesterday’s points
+                    </Typography>
+                  </Box>
+                </Grid>
+              </Grid>
+            </Box>
           </Box>
         </Box>
         <Box pt={3} />
@@ -185,4 +158,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Task;

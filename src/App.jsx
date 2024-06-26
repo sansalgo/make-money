@@ -13,6 +13,7 @@ import MessageCenter from "./pages/sub/messageCenter";
 import ChangePassword from "./pages/sub/changePassword";
 import TRCInfo from "./pages/sub/trcInfo";
 import Promotion from "./pages/main/promotion";
+import Task from "./pages/sub/task";
 
 const GradientBox = styled(Box)(({ theme }) => ({
   position: "relative",
@@ -38,6 +39,7 @@ function App() {
             <Route path="/withdrawal-orders" element={<WithdrawalOrders />} />
             <Route path="/message-center" element={<MessageCenter />} />
             <Route path="/change-password" element={<ChangePassword />} />
+            <Route path="/task" element={<Task />} />
             <Route path="/trc-info" element={<TRCInfo />} />
             <Route path="/promotion" element={<Promotion />} />
             <Route path="/login" element={<Login />} />

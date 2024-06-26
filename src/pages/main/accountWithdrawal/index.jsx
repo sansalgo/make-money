@@ -20,6 +20,7 @@ import {
 
 import palette from "../../../theme/palette";
 import GradientButton from "../components/gradientButton";
+import { useNavigate } from "react-router-dom";
 
 const List = styled(MuiList)(({ theme }) => ({
   fontSize: "12px",
@@ -29,6 +30,7 @@ const List = styled(MuiList)(({ theme }) => ({
 }));
 
 function AccountWithdrawal() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Box padding={"0 20px"}>
@@ -49,6 +51,8 @@ function AccountWithdrawal() {
             style={{ borderRadius: "10px" }}
           />
           <Stack
+            onClick={() => navigate("/account")}
+            style={{ cursor: "pointer" }}
             margin={1}
             direction={"row"}
             spacing={1}

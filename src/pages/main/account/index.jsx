@@ -32,6 +32,7 @@ import {
 
 import GradientButton from "../components/gradientButton";
 import palette from "../../../theme/palette";
+import { useNavigate } from "react-router-dom";
 
 const ImgIconButton = styled(Button)(({ theme }) => ({
   backgroundColor: `white`,
@@ -50,6 +51,7 @@ const ImgIconButton = styled(Button)(({ theme }) => ({
 }));
 
 function Account() {
+  const navigate = useNavigate();
   return (
     <Layout>
       <Box padding={"0 20px"}>
@@ -167,6 +169,7 @@ function Account() {
           <Stack spacing={2}>
             <Stack direction={"row"} spacing={2}>
               <ImgIconButton
+                onClick={() => navigate("/account-withdrawal")}
                 variant="contained"
                 startIcon={
                   <img
@@ -179,16 +182,18 @@ function Account() {
               </ImgIconButton>
 
               <ImgIconButton
+                onClick={() => navigate("/earnings-details")}
                 variant="contained"
                 startIcon={
                   <img src={EarningsDetailsIcon} alt="earnings_details_icon" />
                 }
               >
-                Account <br /> Withdrawal
+                Earnings <br /> Details
               </ImgIconButton>
             </Stack>
             <Stack direction={"row"} spacing={2}>
               <ImgIconButton
+                onClick={() => navigate("/withdrawal-orders")}
                 variant="contained"
                 startIcon={
                   <img
@@ -197,25 +202,27 @@ function Account() {
                   />
                 }
               >
-                Account <br /> Withdrawal
+                Withdrawal <br /> Orders
               </ImgIconButton>
               <ImgIconButton
+                onClick={() => navigate("/message-center")}
                 variant="contained"
                 startIcon={
                   <img src={MessageCenterIcon} alt="message_center_icon" />
                 }
               >
-                Account <br /> Withdrawal
+                Message <br /> Center
               </ImgIconButton>
             </Stack>
             <Box>
               <ImgIconButton
+                onClick={() => navigate("/change-password")}
                 variant="contained"
                 startIcon={
                   <img src={ChangePasswordIcon} alt="change_password_icon" />
                 }
               >
-                Account <br /> Withdrawal
+                Change <br /> Password
               </ImgIconButton>
             </Box>
           </Stack>
